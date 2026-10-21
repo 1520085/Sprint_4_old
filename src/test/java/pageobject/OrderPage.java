@@ -71,7 +71,6 @@ public class OrderPage {
     }
 
     //Страница 2
-
     /**
      *
      * @param date Дата заказа
