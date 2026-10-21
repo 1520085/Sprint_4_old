@@ -69,7 +69,6 @@ public class OrderPage {
     public void clickNextOrderButton(){
         driver.findElement(nextOrderButton).click(); // нажатие кнопки Далее на странице заполнения персональных данных
     }
-
     //Страница 2
     /**
      *
