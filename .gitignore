@@ -2,7 +2,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .kotlin
-
+.gitignore
 
 release.properties
 dependency-reduced-pom.xml
