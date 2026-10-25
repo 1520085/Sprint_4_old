@@ -19,7 +19,10 @@ public deepQuestions(String browser,int index,String expectedAnswerText){
     this.index=index;
     this.expectedAnswerText=expectedAnswerText;
 }
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name= "Тестовые данные: " +
+            "Браузер {0}" +
+            "Номер вопроса {1}" +
+            "Ожидаемый ответ {2}")
     public static Object[][] getDeepQuestionData(){
     return new Object[][]{
             {"chrome",0,"Сутки — 400 рублей. Оплата курьеру — наличными или картой."},
