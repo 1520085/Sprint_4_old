@@ -4,9 +4,6 @@ target/
 .kotlin
 
 
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.nextReleaseBackup
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
