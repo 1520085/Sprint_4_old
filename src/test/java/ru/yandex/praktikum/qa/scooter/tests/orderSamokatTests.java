@@ -1,4 +1,4 @@
-package samokatTests;
+package ru.yandex.praktikum.qa.scooter.tests;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,8 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-
-import java.util.concurrent.TimeUnit;
+import ru.yandex.praktikum.qa.scooter.pajeobjects.MainPage;
+import ru.yandex.praktikum.qa.scooter.pajeobjects.OrderPage;
 
 @RunWith(Parameterized.class)
 
@@ -85,8 +85,8 @@ public orderSamokatTests(String browser, String buttonOrderLocation, String firs
 @Test
     public void testOrderSamokat()
 {
-    pageobject.MainPage mainPage = new pageobject.MainPage(driver);
-    pageobject.OrderPage orderPage = new pageobject.OrderPage(driver);
+    MainPage mainPage = new MainPage(driver);
+    OrderPage orderPage = new OrderPage(driver);
 
     mainPage.openMain(); //Открываем сайт
     //Выбор кнопки заказа
