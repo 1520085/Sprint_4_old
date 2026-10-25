@@ -83,7 +83,7 @@ public orderSamokatTests(String browser, String buttonOrderLocation, String firs
 }
 
 @Test
-    public void testOrderSamokat() throws InterruptedException
+    public void testOrderSamokat()
 {
     pageobject.MainPage mainPage = new pageobject.MainPage(driver);
     pageobject.OrderPage orderPage = new pageobject.OrderPage(driver);
@@ -100,15 +100,12 @@ public orderSamokatTests(String browser, String buttonOrderLocation, String firs
 
     //Заполнение персональных данных
     orderPage.fillUserInfo(firstName,lastName,adress,metroStation,phone);
-    Thread.sleep(3000);
     //Отправка формы
     orderPage.clickNextOrderButton();
     //Заполнение остальных данных
     orderPage.fillOtherInfo(date,rentalPeriod,commentCourier,color);
-    Thread.sleep(1000);
     //подтверждение заказа
     orderPage.clickOrderButton();
-    Thread.sleep(1000);
 }
 }
 
