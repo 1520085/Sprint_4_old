@@ -74,10 +74,13 @@ public class OrderPage {
         driver.findElement(firstNameInput).sendKeys(firstName);
         driver.findElement(lastNameInput).sendKeys(lastName);
         driver.findElement(adressInput).sendKeys(adress);
+        driver.findElement(metroInput).click();
         driver.findElement(metroInput).sendKeys(metroStation);
         //Тыкаем на станцию в выпадающем списке
-        org.openqa.selenium.By metroOption = org.openqa.selenium.By.xpath(".//div[text()='"+metroStation+"']");
-        driver.findElement(metroOption).click();
+        By metroList = By.xpath(".//div[text()='"+metroStation+"']");
+        new WebDriverWait(driver,Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(metroList));
+        driver.findElement(metroList).click();
+        //Тыкаем на станцию в выпадающем списке
 
         driver.findElement(phoneInput).sendKeys(phone);
     }
