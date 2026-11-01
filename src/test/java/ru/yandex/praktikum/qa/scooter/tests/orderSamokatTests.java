@@ -1,6 +1,7 @@
 package ru.yandex.praktikum.qa.scooter.tests;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -106,5 +107,6 @@ public class orderSamokatTests {
         orderPage.fillOtherInfo(date,rentalPeriod,commentCourier,color);
         //подтверждение заказа
         orderPage.clickOrderButton();
+        Assert.assertTrue("Окно оформления заказа не появилось", orderPage.isOrderWindow());
     }
 }

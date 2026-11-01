@@ -3,6 +3,10 @@ package ru.yandex.praktikum.qa.scooter.pajeobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class OrderPage {
     //Инициализация драйвера
@@ -44,7 +48,18 @@ public class OrderPage {
     //Попап подтверждения заказа
     //Кнопка Да
     private final By yesPopupButton = By.xpath(".//div[contains(@class,'Order_Button')]/button[contains(@class, 'Button_Middle') and text()='Да']");
-    //Кнопка Нет
+    //Окно подтверждения заказа
+    private final By OrderWindow = By.xpath("//div[text()='Хотите оформить заказ?']");
+    //Проверка отображения окна заказа
+    public boolean isOrderWindow(){
+    try {
+            new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.visibilityOfElementLocated(OrderWindow));
+            return driver.findElement(OrderWindow).isDisplayed();
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
     //private final By noPopupButton = By.xpath(".//div[contains(@class,'Order_Button')]/button[contains(@class, 'Button_Middle') and text()='Нет']");
     /**
      *
