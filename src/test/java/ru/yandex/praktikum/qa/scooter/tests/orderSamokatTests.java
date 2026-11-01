@@ -39,7 +39,18 @@ public class orderSamokatTests {
         this.commentCourier=commentCourier;
         this.color=color;
     }
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name= "Тестовые данные: " +
+            "Браузер {0}" +
+            "Положение кнопки {1}" +
+            "Имя {2}" +
+            "Фамилия {3}" +
+            "Адрес {4}" +
+            "Метро {5}" +
+            "Номер телефона {6}" +
+            "Дата доставки {7}" +
+            "Количество суток {8}" +
+            "Комментарий {9}" +
+            "Цвет {10}")
     public static Object[][] getOrderData(){
         return new Object[][]
                 {
