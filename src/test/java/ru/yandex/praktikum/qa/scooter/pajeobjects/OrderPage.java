@@ -1,4 +1,4 @@
-package pageobject;
+package ru.yandex.praktikum.qa.scooter.pajeobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

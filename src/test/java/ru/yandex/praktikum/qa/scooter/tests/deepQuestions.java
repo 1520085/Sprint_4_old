@@ -1,10 +1,12 @@
-package samokatTests;
+package ru.yandex.praktikum.qa.scooter.tests;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import ru.yandex.praktikum.qa.scooter.pajeobjects.MainPage;
+
 import java.util.concurrent.TimeUnit;
 @RunWith(org.junit.runners.Parameterized.class)
 public class deepQuestions {
@@ -19,7 +21,10 @@ public class deepQuestions {
         this.index=index;
         this.expectedAnswerText=expectedAnswerText;
     }
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name= "Тестовые данные: " +
+            "Браузер {0}" +
+            "Номер вопроса {1}" +
+            "Ожидаемый ответ {2}")
     public static Object[][] getDeepQuestionData(){
         return new Object[][]{
                 {"chrome",0,"Сутки — 400 рублей. Оплата курьеру — наличными или картой."},
@@ -57,7 +62,7 @@ public class deepQuestions {
 
     @Test
     public void testDeepQuestions(){
-        pageobject.MainPage mainPage = new pageobject.MainPage(driver);
+        MainPage mainPage = new MainPage(driver);
         mainPage.openMain();
         String answerText = mainPage.openQuestionAndGetAnswer(index);
         org.junit.Assert.assertEquals("Текст ответа не совпадает для вопроса "+index,expectedAnswerText,answerText);

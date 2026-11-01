@@ -1,4 +1,4 @@
-package samokatTests;
+package ru.yandex.praktikum.qa.scooter.tests;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,8 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-
-import java.util.concurrent.TimeUnit;
+import ru.yandex.praktikum.qa.scooter.pajeobjects.MainPage;
+import ru.yandex.praktikum.qa.scooter.pajeobjects.OrderPage;
 
 @RunWith(Parameterized.class)
 
@@ -72,10 +72,10 @@ public class orderSamokatTests {
     }
 
     @Test
-    public void testOrderSamokat() throws InterruptedException
+    public void testOrderSamokat()
     {
-        pageobject.MainPage mainPage = new pageobject.MainPage(driver);
-        pageobject.OrderPage orderPage = new pageobject.OrderPage(driver);
+        MainPage mainPage = new MainPage(driver);
+        OrderPage orderPage = new OrderPage(driver);
 
         mainPage.openMain(); //Открываем сайт
         //Выбор кнопки заказа
@@ -89,14 +89,11 @@ public class orderSamokatTests {
 
         //Заполнение персональных данных
         orderPage.fillUserInfo(firstName,lastName,adress,metroStation,phone);
-        Thread.sleep(3000);
         //Отправка формы
         orderPage.clickNextOrderButton();
         //Заполнение остальных данных
         orderPage.fillOtherInfo(date,rentalPeriod,commentCourier,color);
-        Thread.sleep(1000);
         //подтверждение заказа
         orderPage.clickOrderButton();
-        Thread.sleep(1000);
     }
 }
